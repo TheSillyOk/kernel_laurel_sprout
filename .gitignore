@@ -39,9 +39,13 @@
 *.tar
 *.xz
 *.zip
+*.gz-dtb
+*.img
 Module.symvers
 modules.builtin
-
+#
+# Yes
+out/
 #
 # Top-level generic files
 #
@@ -54,7 +58,6 @@ modules.builtin
 /vmlinuz
 /System.map
 /Module.markers
-
 #
 # RPM spec file (make rpm-pkg)
 #
