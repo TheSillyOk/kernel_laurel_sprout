@@ -41,6 +41,9 @@
 *.zip
 *.gz-dtb
 *.img
+*.orig
+*.patch
+*.rej
 Module.symvers
 modules.builtin
 #

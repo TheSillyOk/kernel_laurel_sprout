@@ -63,17 +63,17 @@ default='\033[0m'
 # Variable Definitions
 # -----------------------------
 CLANG_VER="clang-r522817"
-ROM_PATH="/mnt/QuickBoi/LineageOS/22"
-CLANG_DIR="$ROM_PATH/prebuilts/clang/host/linux-x86/$CLANG_VER"
+CLANG_DIR="/home/lud/Downloads/kernel/clang"
 KERNEL_DIR="$PWD"
 Anykernel_DIR="$KERNEL_DIR/AnyKernel3/"
 DATE=$(date +"%d%m%Y")
 TIME=$(date +"%H.%M.%S")
 KERNEL_NAME="NoName"
+KERNEL_TYPE="[KSUNext+SUSFS]"
 DEVICE="MI_A3"
 ANDROID_VER="[a10+a15]"
 KERNEL_SUBVER="[V9]"
-FINAL_ZIP="${DEVICE}-${KERNEL_NAME}-${KERNEL_SUBVER}-${ANDROID_VER}-${DATE}.zip"
+FINAL_ZIP="${DATE}-${DEVICE}-${KERNEL_NAME}-${KERNEL_TYPE}.zip"
 
 BUILD_START=$(date +"%s")
 
