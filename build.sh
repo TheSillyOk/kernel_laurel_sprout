@@ -63,7 +63,7 @@ default='\033[0m'
 # Variable Definitions
 # -----------------------------
 CLANG_VER="clang-r522817"
-CLANG_DIR="/home/lud/Downloads/kernel/clang"
+CLANG_DIR="~/Downloads/kernel/clang"
 KERNEL_DIR="$PWD"
 Anykernel_DIR="$KERNEL_DIR/AnyKernel3/"
 DATE=$(date +"%d%m%Y")
