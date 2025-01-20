@@ -62,14 +62,15 @@ CLANG_VER="clang-r522817"
 CLANG_DIR="~/Downloads/kernel/clang-vic"
 KERNEL_DIR="$PWD"
 Anykernel_DIR=$KERNEL_DIR/AnyKernel3/
-DATE=$(date +"[%d%m%Y]")
-TIME=$(date +"%H.%M.%S")
+DATE="$(date +"[%d%m%Y]")"
+TIME="$(date +"%H.%M.%S")"
+BUILD_TYPE="[RDP]"
 KERNEL_NAME="NoName"
 KERNEL_TYPE="[KSUNext+SUSFS]"
 DEVICE="MI_A3"
 ANDROID_VER="[a10+a15]"
 KERNEL_SUBVER="[V9]"
-FINAL_ZIP="${DATE}-${DEVICE}-${KERNEL_NAME}-${KERNEL_TYPE}.zip"
+FINAL_ZIP="${DATE}-${BUILD_TYPE}-${DEVICE}-${KERNEL_NAME}-${KERNEL_TYPE}.zip"
 
 BUILD_START=$(date +"%s")
 

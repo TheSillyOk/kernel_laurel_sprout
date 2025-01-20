@@ -2,7 +2,7 @@
 /*
  *
  * Automatically generated file; DO NOT EDIT.
- * Linux/arm64 4.14.355-openela Kernel Configuration
+ * Linux/arm64 4.14.336 Kernel Configuration
  *
  */
 /*
