@@ -57,6 +57,7 @@ deps_config := \
 	fs/nfsd/Kconfig \
 	fs/nfs/Kconfig \
 	fs/exofs/Kconfig.ore \
+	fs/erofs/Kconfig \
 	fs/exofs/Kconfig \
 	fs/ufs/Kconfig \
 	fs/sysv/Kconfig \
@@ -1258,7 +1259,7 @@ deps_config := \
 include/config/auto.conf: \
 	$(deps_config)
 
-ifneq "$(KERNELVERSION)" "4.14.355-openela"
+ifneq "$(KERNELVERSION)" "4.14.336"
 include/config/auto.conf: FORCE
 endif
 ifneq "$(ARCH)" "arm64"
