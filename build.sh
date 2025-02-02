@@ -133,7 +133,7 @@ make O=out ARCH=arm64 vendor/laurel_sprout-perf_defconfig
 # Compile the kernel
 echo -e "${blue}Starting kernel compilation...${default}"
 make -j"$(nproc --all)" O=out ARCH=arm64 \
-    CC=ccache clang \
+    CC=clang \
     CLANG_TRIPLE=aarch64-linux-gnu- \
     CROSS_COMPILE="$CLANG_DIR/bin/llvm-" \
     LLVM=1 \
