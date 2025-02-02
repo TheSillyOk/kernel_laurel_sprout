@@ -226,4 +226,8 @@ source "drivers/sensors/Kconfig"
 source "drivers/esoc/Kconfig"
 
 source "drivers/kernelsu/Kconfig"
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of 6d2c17e1b2fd ([SQUASH] Revert KSU)
 endmenu
