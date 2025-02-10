@@ -344,7 +344,7 @@
                 cp -f "$BOOT_FOLDER/dtbo.img" "$BOOT_FOLDER/$ak_folder_name"
               fi
               local date="$(date +"%d%m%Y")"
-              local zip_name="$date-MiA3-[KSUNext-SUSFS].zip"
+              local zip_name="$date-MiA3-[KSUNext-SUSFS]"
               cd "$BOOT_FOLDER"
               mkdir release
               cp -r $PWD/$ak_folder_name/* $PWD/release
