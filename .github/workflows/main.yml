@@ -3,42 +3,6 @@
   pull_request:
   workflow_dispatch:
   push:
-    inputs:
-      BUILD_TITLE:
-        description: 'Custom Build Title'
-        required: false
-      KERNEL_TREE:
-        description: 'Kernel Tree'
-        default: 'https://github.com/TheSillyOk/kernel_laurel_sprout'
-        required: true
-      KERNEL_TREE_BRANCH:
-        description: 'Kernel Tree Branch'
-        required: true
-        default: 'lineage-22.1'
-      CODENAME:
-        description: 'Phone Codename'
-        default: 'laurel_sprout'
-        required: true
-      ANYKERNEL_URL:
-        description: 'AnyKernel Url (leave blank if you dont want AnyKernel)'
-        default: 'https://github.com/TheSillyOk/anykernel'
-        required: false
-      ANYKERNEL_BRANCH:
-        description: 'AnyKernel Branch (defaults to codename)'
-        default: 'master'
-        required: false
-      SECOND_ANYKERNEL_URL:
-        description: 'Second AnyKernel Url (leave blank if you dont want AnyKernel)'
-        default: 'https://github.com/TheSillyOk/anykernel'
-        required: false
-      SECOND_ANYKERNEL_BRANCH:
-        description: 'Second AnyKernel Branch (defaults to codename)'
-        default: 'master'
-        required: false
-      UPLOAD_TO_RELEASE:
-        description: 'Upload to release'
-        type: boolean
-        default: false
 
  jobs:
   build:
@@ -192,7 +156,7 @@
           # Set up KernelSU-Next (ensuring a fresh setup)
           echo "--- Setting up KernelSU-Next ---"
           rm -rf "$KERNEL_FOLDER/KernelSU-Next"
-          curl -LSs "https://raw.githubusercontent.com/rifsxd/KernelSU-Next/next/kernel/setup.sh" | bash -s next-susfs
+          curl -LSs "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/next/kernel/setup.sh" | bash -s next-susfs
           echo "--- KernelSU-Next setup complete ---"
   
           # Debug and copy patch files using absolute paths
