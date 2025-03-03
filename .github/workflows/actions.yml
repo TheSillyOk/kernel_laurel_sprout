@@ -1,0 +1,66 @@
+name: Actions (Build Kernel)
+
+permissions:
+  contents: write  # Allow writing to repository contents (for pushing tags)
+  actions: write   # Allows triggering actions
+  
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  set-env:
+   runs-on: ubuntu-latest
+   outputs:
+    kernel_url: ${{ steps.env.outputs.kernel_url }}
+    kernel_branch: ${{ steps.env.outputs.kernel_branch }}
+    patches_url: ${{ steps.env.outputs.patches_url }}
+    patches_branch: ${{ steps.env.outputs.patches_branch }}
+    anykernel_url: ${{ steps.env.outputs.anykernel_url }}
+    anykernel_branch: ${{ steps.env.outputs.anykernel_branch }}
+   steps:
+    - name: Set env variables
+      id: env
+      run: |
+       echo "kernel_url=https://github.com/TheSillyOk/kernel_laurel_sprout" >> $GITHUB_OUTPUT
+       echo "kernel_branch=vic" >> $GITHUB_OUTPUT
+       echo "patches_url=https://github.com/TheSillyOk/kernel_ls_patches" >> $GITHUB_OUTPUT
+       echo "patches_branch=master" >> $GITHUB_OUTPUT
+       echo "anykernel_url=https://github.com/TheSillyOk/anykernel" >> $GITHUB_OUTPUT
+       echo "anykernel_branch=master" >> $GITHUB_OUTPUT
+
+  ksunextsusfs:
+    uses: ./.github/workflows/ksunextsusfs.yml
+    needs: set-env
+    secrets: inherit
+    with:
+     kernel_url: ${{ needs.set-env.outputs.kernel_url }}
+     kernel_branch: ${{ needs.set-env.outputs.kernel_branch }}
+     patches_url: ${{ needs.set-env.outputs.patches_url }}
+     patches_branch: ${{ needs.set-env.outputs.patches_branch }}
+     anykernel_url: ${{ needs.set-env.outputs.anykernel_url }}
+     anykernel_branch: ${{ needs.set-env.outputs.anykernel_branch }}
+
+  main:
+    uses: ./.github/workflows/main.yml
+    needs: set-env
+    secrets: inherit
+    with:
+     kernel_url: ${{ needs.set-env.outputs.kernel_url }}
+     kernel_branch: ${{ needs.set-env.outputs.kernel_branch }}
+     patches_url: ${{ needs.set-env.outputs.patches_url }}
+     patches_branch: ${{ needs.set-env.outputs.patches_branch }}
+     anykernel_url: ${{ needs.set-env.outputs.anykernel_url }}
+     anykernel_branch: ${{ needs.set-env.outputs.anykernel_branch }}
+
+  ksunext:
+    uses: ./.github/workflows/ksunext.yml
+    needs: set-env
+    secrets: inherit
+    with:
+     kernel_url: ${{ needs.set-env.outputs.kernel_url }}
+     kernel_branch: ${{ needs.set-env.outputs.kernel_branch }}
+     patches_url: ${{ needs.set-env.outputs.patches_url }}
+     patches_branch: ${{ needs.set-env.outputs.patches_branch }}
+     anykernel_url: ${{ needs.set-env.outputs.anykernel_url }}
+     anykernel_branch: ${{ needs.set-env.outputs.anykernel_branch }}
